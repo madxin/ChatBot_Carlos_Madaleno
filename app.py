@@ -25,6 +25,11 @@ def obter_resposta(texto: str) -> str:
         ('olá', 'boa tarde', 'bom dia'): 'Olá tudo bem!',
         'como estás': 'Estou bem, obrigado!',
         ('bye', 'adeus', 'tchau'): 'Gostei de falar contigo! Até breve...',
+        'que fazes': 'Estou a falar contigo.',
+        'python': 'Python é uma linguagem de programação muito popular.',
+        'ajuda': 'Posso responder a perguntas simples.',
+        'gostos': 'Sou um chatbot, não tenho gostos.',
+        'qual é a tua cor favorita': 'Gosto da cor azul.',
     }
 
     for chave, resposta in respostas.items():
@@ -45,6 +50,9 @@ def chat() -> None:
 
     while True:
         user_input: str = input('Tu: ')
+        resposta: str = obter_resposta(user_input)
+
+        print(f'Bot: {resposta}')
 
         if resposta == 'Gostei de falar contigo! Até breve...':
             break
